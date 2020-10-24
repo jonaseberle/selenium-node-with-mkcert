@@ -4,7 +4,9 @@ FROM selenium/node-firefox:3.141.59-xenon
 MAINTAINER Jonas Eberle <flightvision@googlemail.com>
 
 RUN sudo apt-get update \
-    && sudo apt-get -y -o Dpkg::Options::="--force-confnew" install libnss3-tools git build-essential curl file git \
+    && sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" \
+			install -y \
+				libnss3-tools git build-essential curl file git \
     && sudo rm -rf /var/lib/apt/lists/*
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby/current/bin:${PATH}"
@@ -14,3 +16,5 @@ CMD ["/bin/sh", "-l", "-c", "\
 mkcert -install \
 ; /opt/bin/entry_point.sh\
 "]
+
+# vim: ts=2 sw=2 sts=2 sr noet ai si :set ft=dockerfile:
