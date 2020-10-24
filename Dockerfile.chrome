@@ -5,7 +5,7 @@ MAINTAINER Jonas Eberle <flightvision@googlemail.com>
 
 RUN sudo apt-get update \
 		&& sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" \
-			install -y
+			install -y \
 				libnss3-tools git build-essential curl file git \
 		&& sudo rm -rf /var/lib/apt/lists/*
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
