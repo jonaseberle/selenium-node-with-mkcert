@@ -3,7 +3,7 @@ FROM selenium/node-chrome:3.141.59-xenon
 
 MAINTAINER Jonas Eberle <flightvision@googlemail.com>
 
-RUN sudo apt-get update \
+RUN sudo apt-get update -qq \
 		&& sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" \
 			install -y \
 				libnss3-tools git build-essential curl file git \
