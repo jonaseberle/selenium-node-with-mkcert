@@ -1,5 +1,5 @@
 # adds `mkcert` to the selenium-node-* containers
-FROM selenium/node-chrome:90.0
+FROM selenium/node-chrome:4
 
 MAINTAINER Jonas Eberle <flightvision@googlemail.com>
 
