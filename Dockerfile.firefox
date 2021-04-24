@@ -1,5 +1,5 @@
 # adds `mkcert` to the selenium-node-* containers
-FROM selenium/node-firefox:3.141.59-xenon
+FROM selenium/node-firefox:88.0
 
 MAINTAINER Jonas Eberle <flightvision@googlemail.com>
 
